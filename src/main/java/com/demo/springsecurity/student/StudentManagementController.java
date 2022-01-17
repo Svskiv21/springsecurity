@@ -17,7 +17,7 @@ public class StudentManagementController {
     );
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN, ROLE_ADMINTRAINEE')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_ADMINTRAINEE')")
     public List<Student> getAllStudents(){
         System.out.println("getAllStudents");
         return STUDENTS;
@@ -41,7 +41,7 @@ public class StudentManagementController {
     @PreAuthorize("hasAuthority('student:write')")
     public void updateStudent(@PathVariable Integer studentId, @RequestBody Student student){
         System.out.println("updateStudent");
-        System.out.println(String.format("%s %s", studentId, student));
+        System.out.printf("%s %s%n", studentId, student);
     }
 
 }
