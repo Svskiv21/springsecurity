@@ -1,12 +1,8 @@
 package com.demo.springsecurity.student;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 public class Student {
 
     private final Integer studentId;
